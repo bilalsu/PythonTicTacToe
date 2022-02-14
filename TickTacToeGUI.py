@@ -1,9 +1,10 @@
 from distutils import command
 from tkinter import *
 import random
+from turtle import bgcolor, color
 
 root = Tk()
-root.geometry("600x600")
+root.geometry("500x400")
 root.title("TicTacToe")
 
 buttons = [[0,0,0],
@@ -21,9 +22,7 @@ gameComplete = False
 def nextTurn(row, column):
     global startTurn
 
-    if gameComplete == True:
-        gameOver()
-    elif buttons[row][column]['text'] == "" and startTurn == 1:
+    if buttons[row][column]['text'] == "" and startTurn == 1:
         buttons[row][column]['text'] = "x"
         heading['text'] = "0's Turn"
         playerWon()
@@ -109,27 +108,6 @@ def playerWon():
         heading['text'] = "o Won"
         gameComplete = True
    
-
-
-
-
-
-
-
-
-
-
-def disableButtons():
-    pass
-
-
-
-
-
-
-
-def gameOver():
-    pass
 
 def resetGame():
     global gameComplete
